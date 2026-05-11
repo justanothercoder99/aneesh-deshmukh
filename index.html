@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aneesh Deshmukh | AI, Robotics & Embodied Intelligence</title>
+  <meta name="description" content="Personal academic and professional bio for Aneesh Deshmukh, Master's student in Computer Science focused on AI, robotics, embodied intelligence, and neuroscience-inspired navigation." />
+  <style>
+    :root {
+      --bg: #0f172a; /* #f7f7f4; */
+      --card: #111827; /* #ffffff; */
+      --text: #e5e7eb; /* #1f2933; */
+      --muted: #cbd5e1; /* #a5b4c7; /* #94a3b8; /* #5f6c7b; */
+      --accent: #3b82f6; /* #1f6feb; */
+      --accent-soft: rgba(59, 130, 246, 0.16); /* #e8f1ff; */
+      --border: #243244 /* #d9e2ec; */
+      --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e8f1ff 0, transparent 34%), var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(15, 23, 42, 0.78); /* rgba(247, 247, 244, 0.82); */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* rgba(217, 226, 236, 0.75); */
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.94rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 56px 22px 80px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+      gap: 32px;
+      align-items: stretch;
+      margin-bottom: 36px;
+    }
+
+    .hero-card, .side-card, section {
+      background: var(--card);
+      border: 1px solid rgba(217, 226, 236, 0.88);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    section {
+        scroll-margin-top: 80px;
+    }
+
+    .hero-card {
+      padding: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      margin: 0;
+      letter-spacing: -0.035em;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 7vw, 5.3rem);
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 0 24px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 11px 18px;
+      font-weight: 750;
+      border: 1px solid var(--border);
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05); /* #1e293b; /* white; */
+      backdrop-filter: blur(8px);
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .button:hover {
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .side-card {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .profile-placeholder {
+      width: 112px;
+      height: 112px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 2.3rem;
+      font-weight: 850;
+      letter-spacing: -0.08em;
+    }
+
+    .quick-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .quick-list li {
+      color: var(--muted);
+    }
+
+    .quick-list strong {
+      color: var(--text);
+    }
+
+    section {
+      padding: 34px;
+      margin-top: 24px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      margin-top: -6px;
+      margin-bottom: 22px;
+      max-width: 780px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .three-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .item {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      background: var(--card);
+    }
+
+    .item p {
+      margin: 8px 0 0;
+      color: var(--muted);
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 4px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tag {
+      border-radius: 999px;
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      padding: 7px 11px;
+      font-size: 0.9rem;
+      color: #334155;
+      font-weight: 650;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .timeline .item {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline .item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 5px;
+      background: var(--accent);
+      opacity: 0.75;
+    }
+
+    ul.clean {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .publication-title {
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    footer {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 22px 40px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      .hero, .grid, .three-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 30px;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding-top: 32px;
+      }
+
+      section, .hero-card, .side-card {
+        padding: 24px;
+      }
+
+      .nav-links {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top">Aneesh Deshmukh</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#research">Research</a>
+            <a href="#projects">Projects</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#contact">Contact</a>
+        </div>
+        </nav>
+  </header>
+
+  <main id="top">
+    <div class="hero">
+        <div class="hero-card">
+            <div class="eyebrow">AI · Robotics · Embodied Intelligence</div>
+            <h1>Aneesh Deshmukh</h1>
+            <p class="hero-subtitle">
+            Master’s student in Computer Science at the University of Cincinnati, focused on AI and robotics systems inspired by neuroscience for task planning, navigation, and intelligent decision-making.
+            </p>
+            <p>
+            I work at the intersection of deep learning, robotics, embodied AI, and computational neuroscience. My current research explores how agents can combine visual-language models, memory, and biologically inspired spatial representations to understand tasks, identify objects, and plan actions in physical or simulated environments.
+            </p>
+            <div class="button-row">
+                <a class="button" href="#research">View Research</a>
+                <a class="button" href="#projects">View Projects</a>
+                <a class="button" href="mailto:deshmua2@mail.uc.edu">Contact Me</a>
+                <a class="button primary" href="assets/AneeshDeshmukhResume_April2026.pdf" target="_blank" rel="noopener">Resume</a>
+            </div>
+        </div>
+
+        <aside class="side-card" aria-label="Profile summary">
+            <div class="profile-placeholder">AD</div>
+            <ul class="quick-list">
+                <li><strong>Current role:</strong> Master’s student, Research Assistant</li>
+                <li><strong>Institution:</strong> University of Cincinnati</li>
+                <li><strong>Research focus:</strong> Embodied AI, robotics, VLMs, hippocampal navigation</li>
+                <li><strong>Based in:</strong> Cincinnati, Ohio</li>
+            </ul>
+        </aside>
+    </div>
+
+    <section id="about">
+        <h2>About</h2>
+        <p class="section-intro">
+            I am currently pursuing a Master’s degree in Computer Science, with a thesis focused on AI and robotic solutions inspired by neuroscience for task and path planning. I am also serving as a Research Assistant at the P&amp;G Digital Accelerator @ UC. My strengths lie in problem-solving, programming, deep learning, and robotics, and I am interested in translating these skills into real-world impact through research, engineering, and teaching.
+        </p>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <div class="grid">
+            <div class="item">
+                <h3>University of Cincinnati</h3>
+                <div class="meta">M.S. in Computer Science · Expected May 2027 · 4.0 GPA</div>
+                <p>Research focus in embodied AI, robotics, visual-language models, and neuroscience-inspired navigation.</p>
+            </div>
+            <div class="item">
+                <h3>Vellore Institute of Technology (VIT)</h3>
+                <div class="meta">Bachelor of Technology in Electronics and Communications Engineering · Graduated June 2021</div>
+                <p>Focused on electronics, communication systems, and embedded systems. Founding Project Head for VITLUG. Won Robowars (Under 30kg).</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <p class="section-intro">A snapshot of the tools, languages, frameworks, and technical areas that define my current profile.</p>
+        <div class="three-grid">
+            <div class="item">
+                <h3>Languages</h3>
+                <div class="tag-list">
+                    <span class="tag">Python</span>
+                    <span class="tag">C/C++</span>
+                    <span class="tag">Java</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">SQL</span>
+                </div>
+            </div>
+            <div class="item">
+                <h3>AI &amp; Data</h3>
+                <div class="tag-list">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Transformers</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">LLMs</span>
+                    <span class="tag">VLMs</span>
+                    <span class="tag">Active Learning</span>
+                    <span class="tag">Neural Networks</span>
+                </div>
+            </div>
+            <div class="item">
+                <h3>Robotics &amp; Systems</h3>
+                <div class="tag-list">
+                    <span class="tag">ROS 2</span>
+                    <span class="tag">MoveIt</span>
+                    <span class="tag">NVIDIA Isaac Sim</span>
+                    <span class="tag">Webots</span>
+                    <span class="tag">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <div class="timeline">
+        <div class="item">
+            <h3>Research Assistant · P&amp;G Digital Accelerator @ UC</h3>
+            <div class="meta">University of Cincinnati · September 2025 - Present</div>
+            <ul class="clean">
+                <li>Python</li>
+                <li>Developing Python/Dash tools to analyze experimental data and support decision-making workflows.</li>
+                <li>Working on data-informed and robotics-oriented solutions for rapid experimentation.</li>
+                <li>Applying AI and active-learning ideas to improve experimental design and analysis pipelines.</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>Software Engineer Intern · Apricity Robotics</h3>
+            <div class="meta">June 2025 - August 2025</div>
+            <ul class="clean">
+                <li>Python · C · C++</li>
+                <li>Worked on robotics simulation and software systems involving NVIDIA Isaac Sim, ROS 2, Python, and PyQt.</li>
+                <li>Contributed to simulation and control workflows for robotic ultrasound and AI-assisted echocardiography systems.</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>Software Engineer · Hitwicket (Metasports Interactive)</h3>
+            <div class="meta">June 2021 - July 2024</div>
+            <ul class="clean">
+                <li>Javascript · MongoDb · Redis · NodeJs</li>
+                <li>Developed a modular and scalable automation system reducing development time by 70% for core revenue products.</li>
+                <li>Led cross-functional teams of 4-7 to scale systems and boost code quality from 10% to 64%.</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>Software Developer Intern · Hitwicket (Metasports Interactive)</h3>
+            <div class="meta">December 2020 - June 2021</div>
+            <ul class="clean">
+                <li>Javascript · MongoDb · Redis · NodeJs · Python</li>
+                <li>Built a ReactJS-based internal analytics dashboard for 100% product visibility.</li>
+                <li>Handled backend feature deployment and production server maintenance (NodeJS, PHP, Ruby).</li>
+            </ul>
+            </div>
+      </div>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <div class="item">
+            <p class="publication-title"><a href="https://aclanthology.org/2025.emnlp-main.876.pdf">GuessingGame: Measuring the Informativeness of Open-Ended Questions in Large Language Models</a></p>
+            <div class="meta">Dylan Hudson, Daniel Vennemeyer, Aneesh Deshmukh, Justin Zhan, Tianyu Jiang · EMNLP 2025</div>
+            <p>
+            Independently developed a Bayesian belief-tracking framework for measuring per-question information gain in open-domain dialogue. The framework enables interpretable evaluation and supports LLM prompting strategies through soft evidence updates over semantic concepts.
+            </p>
+        </div>
+    </section>
+
+    <section id="research">
+        <h2>Active Research</h2>
+        <div class="grid">
+            <div class="item">
+            <h3>Embodied AI for Neuroscience-Inspired Navigation</h3>
+            <p>
+                Developing an embodied agent that combines place-cell-like spatial representations, boundary vector cells, visual-language models, and memory to support task and path planning in simulated environments.
+            </p>
+            <div class="tag-list">
+                <span class="tag">Place Cells</span>
+                <span class="tag">BVCs</span>
+                <span class="tag">LLaVA</span>
+                <span class="tag">CLIP</span>
+                <span class="tag">Memory</span>
+            </div>
+            </div>
+            <div class="item">
+            <h3>Information Gain for LLM Question Asking</h3>
+            <p>
+                Studying how information-theoretic measures can evaluate and guide open-ended question asking in LLMs, including Bayesian belief updates over semantic properties and concepts.
+            </p>
+            <div class="tag-list">
+                <span class="tag">LLMs</span>
+                <span class="tag">Bayesian Belief Tracking</span>
+                <span class="tag">Information Gain</span>
+                <span class="tag">Prompting</span>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid">
+            <div class="item">
+                <h3>Space Robot Capture Simulation</h3>
+                <p>
+                    Built a robotics simulation involving a flying space robot and robotic arm for capture tasks, including 2D dynamics, inverse kinematics, PID control, and performance analysis.
+                </p>
+            </div>
+            <div class="item">
+                <h3>Recommendation Systems using RBMs, GNNs, and Transformers</h3>
+                <p>
+                    Designed and evaluated multiple recommendation system architectures, including Restricted Boltzmann Machines (RBMs), Graph Neural Networks (GNNs), and Transformer-based models for music recommendation tasks.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Deep Reinforcement Learning for Robot Navigation</h3>
+                <p>
+                    Developed a deep reinforcement learning-based robotic navigation system for obstacle avoidance and autonomous path planning in simulated environments.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>3-DOF Robotic Arm Modeling and Simulation</h3>
+                <p>
+                    Built a MATLAB-based simulation framework for modeling, kinematic analysis, and control of a 3-DOF robotic arm.
+                </p>
+            </div>
+
+            <div class="item">
+                <h3>Social Distance Monitoring using Computer Vision</h3>
+                <p>
+                    Developed an OpenCV-based video surveillance system to detect interpersonal distancing violations and identify high-risk crowding scenarios during the COVID-19 pandemic.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teaching">
+        <h2>Teaching</h2>
+        <div class="timeline">
+            <div class="item">
+            <h3>Teaching Assistant · Deep Learning</h3>
+            <div class="meta">University of Cincinnati · Spring 2025</div>
+            <p>Supported instruction, grading, and student learning for graduate-level deep learning coursework.</p>
+            </div>
+            <div class="item">
+            <h3>Teaching Assistant · Formal Languages &amp; Automata</h3>
+            <div class="meta">University of Cincinnati · Spring 2025</div>
+            <p>Supported coursework involving automata theory, formal languages, computation, and grading.</p>
+            </div>
+            <div class="item">
+            <h3>Teaching Assistant · Physics</h3>
+            <div class="meta">University of Cincinnati · Fall 2024</div>
+            <p>Led or supported recitations, grading, and student assistance for introductory physics courses.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards">
+        <h2>Certificates &amp; Awards</h2>
+        <div class="grid">
+            <div class="item">
+                <h3>Adult Mental Health First Aid USA</h3>
+                <p>National Council for Mental Wellbeing (April 2026-April 2029)</p>
+            </div>
+            <div class="item">
+                <h3>Basic Life Support Provider</h3>
+                <p>American Heart Association (March 2026-March 2028)</p>
+            </div>
+            <div class="item">
+                <h3>Graduate Incentive Award</h3>
+                <p>University of Cincinnati (Fall 2024 - Present)</p>
+            </div>
+            <div class="item">
+                <h3>Employee of the Quarter x2</h3>
+                <p>Metasports Interactive (Jan-Mar '23, Jan-Mar '24)</p>
+            </div>
+            <div class="item">
+                <h3>Rajeswari Viswanathan Memorial Scholarship</h3>
+                <p>Vellore Institute of Technology (2019-2020)</p>
+            </div>
+            <div class="item">
+                <h3>Machine Learning with Python</h3>
+                <p>cognitiveclass.ai - IBM Developer Skills Network.</p>
+            </div>
+            <div class="item">
+                <h3>Control of Mobile Robots</h3>
+                <p>Coursera/Georgia Tech</p>
+            </div>
+            <div class="item">
+                <h3>Mathematics for Machine Learning: PCA</h3>
+                <p>Coursera/Imperial College of London</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p class="section-intro">
+            I am open to research collaborations, robotics and AI engineering opportunities, and conversations about embodied intelligence, LLMs, and computational neuroscience.
+        </p>
+        <div class="button-row">
+            <a class="button primary" href="mailto:deshmua2@mail.uc.edu">Email</a>
+            <a class="button" href="https://github.com/justanothercoder99" target="_blank" rel="noopener">GitHub</a>
+            <a class="button" href="https://www.linkedin.com/in/aneesh-deshmukh/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="button" href="https://scholar.google.com/citations?user=cTM054sAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Aneesh Deshmukh. Built with HTML/CSS and hosted on GitHub Pages.</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
